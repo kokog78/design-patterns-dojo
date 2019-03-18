@@ -2,7 +2,7 @@ package dojo.patterns;
 
 import java.io.PrintStream;
 
-public class EmailMessageLogger {
+public class LoggerMessageSender implements MessageSender {
 	
 	private PrintStream out = System.out;
 	
@@ -10,6 +10,7 @@ public class EmailMessageLogger {
 		this.out = out;
 	}
 
+	@Override
 	public void sendMessage(String from, String to, String subject, String textMessage) {
 		log("From", from);
 		log("To", to);

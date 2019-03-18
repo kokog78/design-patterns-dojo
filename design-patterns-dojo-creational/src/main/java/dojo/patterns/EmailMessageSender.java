@@ -12,7 +12,7 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class EmailMessageSender {
+public class EmailMessageSender implements MessageSender {
 
 	private String host;
 	private int port;
@@ -59,6 +59,7 @@ public class EmailMessageSender {
 		this.useStartTls = useStartTls;
 	}
 	
+	@Override
 	public void sendMessage(String from, String to, String subject, String textMessage) throws AddressException, MessagingException {
 		Message message = createMessage(from, to, subject, textMessage);
 		Transport.send(message);
