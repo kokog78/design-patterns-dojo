@@ -24,11 +24,11 @@ public class AbstractFactoryTest extends AbstractTest {
 	}
 	
 	private void configureEmailMessageSenderFactory() {
-		// TODO beállítjuk az EmailMessageSender-t visszaadó gyárat
+		// TODO beállítjuk az EmailMessageSender-t visszaadó gyárat aktuálisnak
 	}
 	
 	private void configureLoggerMessageSenderFactory(ByteArrayOutputStream output) {
-		// TODO beállítjuk a LoggerMessageSender-t visszaadó gyárat
+		// TODO beállítjuk a LoggerMessageSender-t visszaadó gyárat aktuálisnak
 	}
 	
 	private MessageSender getMessageSender() {
