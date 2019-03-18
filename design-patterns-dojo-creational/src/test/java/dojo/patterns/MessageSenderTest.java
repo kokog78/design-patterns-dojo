@@ -2,6 +2,10 @@ package dojo.patterns;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -20,24 +24,20 @@ public class MessageSenderTest {
 				.relayDomains("localhost")
 		);
 	
+	private ByteArrayOutputStream output;
+	
 	@Test
 	public void should_send_email() throws Exception {
 		assertThat(server.mailBox()).isEmpty();
 		assertThat(server.isRunning()).isTrue();
 		emailSender().sendMessage("from@localhost", "to@localhost", "Test", "This is a test");
-		assertThat(server.mailBox()).hasSize(1);
-		assertThat(server.mailBox()).allSatisfy(email -> {
-			assertThat(email.getFrom()).isEqualTo("from@localhost");
-			assertThat(email.getTo()).isEqualTo("to@localhost");
-			assertThat(email.getSubject()).isEqualTo("Test");
-			assertThat(email.getEmailStr()).contains("This is a test");
-			System.out.println(email.getEmailStr());
-		});
+		assertEmail("from@localhost", "to@localhost", "Test", "This is a test");
 	}
 	
 	@Test
-	public void should_log_message_properties() {
+	public void should_log_message_properties() throws UnsupportedEncodingException {
 		emailLogger().sendMessage("from@localhost", "to@localhost", "Test", "This is a test");
+		assertOutput(output, "from@localhost", "to@localhost", "Test", "This is a test");
 	}
 	
 	private EmailMessageSender emailSender() {
@@ -50,7 +50,28 @@ public class MessageSenderTest {
 	}
 	
 	private EmailMessageLogger emailLogger() {
-		return new EmailMessageLogger();
+		EmailMessageLogger logger = new EmailMessageLogger();
+		output = new ByteArrayOutputStream();
+		logger.setOut(new PrintStream(output));
+		return logger;
+	}
+	
+	private void assertEmail(String from, String to, String subject, String text) {
+		assertThat(server.mailBox()).hasSize(1);
+		assertThat(server.mailBox()).allSatisfy(email -> {
+			assertThat(email.getFrom()).isEqualTo(from);
+			assertThat(email.getTo()).isEqualTo(to);
+			assertThat(email.getSubject()).isEqualTo(subject);
+			assertThat(email.getEmailStr()).contains(text);
+		});
+	}
+	
+	private void assertOutput(ByteArrayOutputStream output, String from, String to, String subject, String text) throws UnsupportedEncodingException {
+		String result = output.toString("UTF-8");
+		assertThat(result).contains("From: " + from);
+		assertThat(result).contains("To: " + to);
+		assertThat(result).contains("Subject: " + subject);
+		assertThat(result).contains("Message: " + text);
 	}
 	
 }

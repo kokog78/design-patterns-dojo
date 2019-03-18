@@ -1,6 +1,14 @@
 package dojo.patterns;
 
+import java.io.PrintStream;
+
 public class EmailMessageLogger {
+	
+	private PrintStream out = System.out;
+	
+	public void setOut(PrintStream out) {
+		this.out = out;
+	}
 
 	public void sendMessage(String from, String to, String subject, String textMessage) {
 		log("From", from);
@@ -11,7 +19,7 @@ public class EmailMessageLogger {
 	
 	private void log(String propertyName, String propertyValue) {
 		String logMsg = String.format("%s: %s", propertyName, propertyValue);
-		System.out.println(logMsg);
+		out.println(logMsg);
 	}
 	
 }
