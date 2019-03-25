@@ -1,4 +1,4 @@
-package dojo.patterns;
+package dojo.patterns.factorymethod;
 
 public abstract class MessageClient {
 

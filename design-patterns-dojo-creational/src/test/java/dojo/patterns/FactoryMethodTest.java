@@ -4,6 +4,8 @@ import java.io.ByteArrayOutputStream;
 
 import org.junit.Test;
 
+import dojo.patterns.factorymethod.MessageClient;
+
 public class FactoryMethodTest extends AbstractTest {
 
 	@Test
