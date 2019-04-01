@@ -19,11 +19,11 @@ public class CoffeeBar {
 	}
 	
 	public void processLatte() {
-		// TODO Arabica GroundCoffee + Milk
+		// TODO Arabica 20g GroundCoffee + Milk
 	}
 	
 	public void processCappuccino() {
-		// // TODO Robusta GroundCoffee + Whip
+		// // TODO Robusta 20g GroundCoffee + Whip
 	}
 	
 }

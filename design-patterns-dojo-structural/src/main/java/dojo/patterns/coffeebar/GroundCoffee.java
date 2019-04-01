@@ -17,14 +17,14 @@ public class GroundCoffee {
 	
 	@Override
 	public String toString() {
-		return type.name().substring(0, 1) + type.name().substring(1).toLowerCase() + " Coffee";
+		return String.format("%s Coffee %.0f gram", type, massInGram);
 	}
 	
 	private double getBasePrice() {
 		if (type == CoffeeType.ARABICA) {
-			return 6.0;
+			return 10.0;
 		} else {
-			return 4.0;
+			return 8.0;
 		}
 	}
 	
