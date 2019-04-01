@@ -2,8 +2,12 @@ package dojo.patterns.coffeebar;
 
 public class GroundCoffee {
 
-	private final CoffeeType type;
-	private final double massInGram;
+	private CoffeeType type;
+	private double massInGram;
+	
+	protected GroundCoffee() {
+		// default constructor
+	}
 	
 	public GroundCoffee(CoffeeType type, double massInGram) {
 		super();
