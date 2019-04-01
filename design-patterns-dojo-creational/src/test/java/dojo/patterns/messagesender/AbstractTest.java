@@ -1,4 +1,4 @@
-package dojo.patterns;
+package dojo.patterns.messagesender;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

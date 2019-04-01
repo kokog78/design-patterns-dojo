@@ -1,6 +1,6 @@
 package dojo.patterns.builder;
 
-import dojo.patterns.MessageSender;
+import dojo.patterns.messagesender.MessageSender;
 
 public class MessageSenderBuilder implements IMessageSenderBuilder {
 

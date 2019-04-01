@@ -1,4 +1,4 @@
-package dojo.patterns;
+package dojo.patterns.messagesender;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -7,6 +7,9 @@ import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 
 import org.junit.Test;
+
+import dojo.patterns.messagesender.EmailMessageSender;
+import dojo.patterns.messagesender.LoggerMessageSender;
 
 public class MessageSenderTest extends AbstractTest {
 	

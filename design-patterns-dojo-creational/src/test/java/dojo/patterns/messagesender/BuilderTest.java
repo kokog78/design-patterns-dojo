@@ -1,8 +1,10 @@
-package dojo.patterns;
+package dojo.patterns.messagesender;
 
 import java.io.ByteArrayOutputStream;
 
 import org.junit.Test;
+
+import dojo.patterns.messagesender.MessageSender;
 
 public class BuilderTest extends AbstractTest {
 

@@ -1,4 +1,4 @@
-package dojo.patterns;
+package dojo.patterns.messagesender;
 
 public interface MessageSender {
 
