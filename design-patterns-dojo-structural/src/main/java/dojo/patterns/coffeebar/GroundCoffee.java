@@ -21,7 +21,7 @@ public class GroundCoffee {
 	
 	@Override
 	public String toString() {
-		return String.format("%s Coffee %.0f gram", type, massInGram);
+		return String.format("%s Coffee %.0f g", type, massInGram);
 	}
 	
 	private double getBasePrice() {
