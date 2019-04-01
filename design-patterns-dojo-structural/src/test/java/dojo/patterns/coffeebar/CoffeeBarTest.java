@@ -25,22 +25,22 @@ public class CoffeeBarTest {
 	@Test @Ignore
 	public void processEspresso_should_order_and_bill_espresso() throws Exception {
 		bar.processEspresso();
-		verify(orderingSystem).orderProduct("Costa Rica Coffee x 1");
-		verify(billingSystem).billItem("Costa Rica Coffee x 1", 250.0);
+		verify(orderingSystem).orderProduct("Costa Rica x 1");
+		verify(billingSystem).billItem("Costa Rica x 1", 250.0);
 	}
 	
 	@Test @Ignore
 	public void processLatte_should_order_and_bill_latte() throws Exception {
 		bar.processLatte();
-		verify(orderingSystem).orderProduct("Arabica Coffee 20g + Milk");
-		verify(billingSystem).billItem("Arabica Coffee 20g + Milk", 300.0);
+		verify(orderingSystem).orderProduct("Arabica Coffee 20 g + Milk");
+		verify(billingSystem).billItem("Arabica Coffee 20 g + Milk", 300.0);
 	}
 	
 	@Test @Ignore
 	public void processCappuccino_should_order_and_bill_cappuccino() throws Exception {
 		bar.processCappuccino();
-		verify(orderingSystem).orderProduct("Robusta Coffee 20g + Whip");
-		verify(billingSystem).billItem("Robusta Coffee 20g + Whip", 316.0);
+		verify(orderingSystem).orderProduct("Robusta Coffee 20 g + Whip");
+		verify(billingSystem).billItem("Robusta Coffee 20 g + Whip", 316.0);
 	}
 	
 }
