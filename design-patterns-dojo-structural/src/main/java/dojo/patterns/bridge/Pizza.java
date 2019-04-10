@@ -9,4 +9,6 @@ public abstract class Pizza {
 		this.handler = handler;
 	}
 	
+	public abstract void order();
+	
 }
