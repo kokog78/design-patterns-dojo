@@ -2,7 +2,6 @@ package dojo.patterns.pizza;
 
 import org.junit.Test;
 
-import dojo.patterns.bridge.CarbonaraPizza;
 import dojo.patterns.bridge.Pizza;
 import dojo.patterns.bridge.PizzaOrderHandler;
 import dojo.patterns.bridge.PizzaOrderHandler1;
