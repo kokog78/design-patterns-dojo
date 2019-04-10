@@ -2,7 +2,7 @@ package dojo.patterns.pizza;
 
 public class Ingredient {
 
-	private final IngredientKind kind;
+	public final IngredientKind kind;
 
 	public Ingredient(IngredientKind kind) {
 		super();
