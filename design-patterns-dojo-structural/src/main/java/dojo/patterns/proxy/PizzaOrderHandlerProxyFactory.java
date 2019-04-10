@@ -4,6 +4,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 import dojo.patterns.bridge.PizzaOrderHandler;
 
@@ -34,9 +36,14 @@ public class PizzaOrderHandlerProxyFactory {
 	private void logMethodCall(Method method, Object[] args) {
 		System.out.println("Class: " + method.getDeclaringClass().getSimpleName());
 		System.out.println("Method: " + method.getName());
-		System.out.println("Parameters:");
 		for (Object arg : args) {
-			System.out.println("\t" + arg);
+			Object loggable = arg;
+			if (loggable.getClass().isArray()) {
+				loggable = Arrays.stream((Object[])loggable)
+						.map(o -> o.toString())
+						.collect(Collectors.joining(","));
+			}
+			System.out.println("Parameter: " + loggable);
 		}
 	}
 	
