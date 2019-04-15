@@ -1,4 +1,4 @@
-package dojo.patterns.composit;
+package dojo.patterns.composite;
 
 import java.util.ArrayList;
 import java.util.List;

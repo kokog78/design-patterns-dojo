@@ -1,4 +1,4 @@
-package dojo.patterns.composit;
+package dojo.patterns.composite;
 
 public interface TaskNode {
 

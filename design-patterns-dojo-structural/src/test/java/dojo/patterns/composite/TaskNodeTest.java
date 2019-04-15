@@ -1,8 +1,11 @@
-package dojo.patterns.composit;
+package dojo.patterns.composite;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
+
+import dojo.patterns.composite.Task;
+import dojo.patterns.composite.TaskList;
 
 public class TaskNodeTest {
 	
