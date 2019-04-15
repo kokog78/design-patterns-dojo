@@ -6,6 +6,7 @@ import java.util.List;
 //TODO TaskNode interfész implementálása
 public class TaskList {
 
+	// TODO generikus típus megváltoztatása TaskNode-ra
 	private List<Task> tasks;
 	
 	public TaskList(Task ... tasks) {
