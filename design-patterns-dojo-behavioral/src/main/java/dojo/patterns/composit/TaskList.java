@@ -3,7 +3,7 @@ package dojo.patterns.composit;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO TaskNode interfész implementálása
+// TODO TaskNode interfész implementálása
 public class TaskList {
 
 	// TODO generikus típus megváltoztatása TaskNode-ra
@@ -14,6 +14,10 @@ public class TaskList {
 		for (Task task : tasks) {
 			this.tasks.add(task);
 		}
+	}
+	
+	public void addTask(Task task) {
+		tasks.add(task);
 	}
 	
 	public List<Task> getTasks() {
