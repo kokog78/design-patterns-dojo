@@ -10,7 +10,7 @@ public class IdFormatterTest {
 	
 	@Test
 	public void should_format_words_in_camel_case() throws Exception {
-		// TODO CamelCaseFormatterStrategy beállítása
+		// TODO CamelCaseFormatterStrategy beállítása a formatter példányban
 		assertThat(formatter.format("")).isEqualTo("");
 		assertThat(formatter.format("word")).isEqualTo("word");
 		assertThat(formatter.format("two words")).isEqualTo("twoWords");
@@ -19,7 +19,7 @@ public class IdFormatterTest {
 	
 	@Test
 	public void should_format_words_in_snake_case() throws Exception {
-		// TODO CamelCaseFormatterStrategy beállítása
+		// TODO SnakeCaseFormatterStrategy beállítása a formatter példányban
 		assertThat(formatter.format("")).isEqualTo("");
 		assertThat(formatter.format("word")).isEqualTo("word");
 		assertThat(formatter.format("two words")).isEqualTo("two_words");
