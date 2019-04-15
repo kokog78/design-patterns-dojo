@@ -1,6 +1,8 @@
 package dojo.patterns.strategy;
 
 public class IdFormatter {
+	
+	// TODO stratégia beállítása és tárolása
 
 	public String format(String words) {
 		// TODO szavak megkeresése
