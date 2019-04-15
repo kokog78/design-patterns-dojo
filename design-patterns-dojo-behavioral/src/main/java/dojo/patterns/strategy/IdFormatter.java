@@ -4,7 +4,7 @@ public class IdFormatter {
 	
 	// TODO stratégia beállítása és tárolása
 
-	public String format(String words) {
+	public String format(String text) {
 		// TODO szavak megkeresése
 		// TODO stratégia meghívása
 		return null;
