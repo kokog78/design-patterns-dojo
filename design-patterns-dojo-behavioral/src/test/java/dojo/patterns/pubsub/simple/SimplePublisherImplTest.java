@@ -1,6 +1,7 @@
 package dojo.patterns.pubsub.simple;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,21 @@ public class SimplePublisherImplTest {
 	public void init() {
 		pubsub = new SimplePublisherImpl();
 		messages = new ArrayList<>();
+	}
+	
+	@Test
+	public void subscribe_should_throw_exception_for_null() throws Exception {
+		assertThatThrownBy(() -> pubsub.subscribe(null)).isInstanceOf(NullPointerException.class);
+	}
+	
+	@Test
+	public void unsubscribe_should_throw_exception_for_null() throws Exception {
+		assertThatThrownBy(() -> pubsub.unsubscribe(null)).isInstanceOf(NullPointerException.class);
+	}
+	
+	@Test
+	public void publish_should_throw_exception_for_null() throws Exception {
+		assertThatThrownBy(() -> pubsub.publish(null)).isInstanceOf(NullPointerException.class);
 	}
 	
 	@Test
