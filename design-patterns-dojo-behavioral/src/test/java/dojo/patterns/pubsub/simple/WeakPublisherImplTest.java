@@ -7,6 +7,7 @@ public class WeakPublisherImplTest extends SimplePublisherImplTest {
 	@Test
 	public void should_not_deliver_to_deprecated_subscriber() throws Exception {
 		pubsub.subscribe(subscriber());
+		System.gc();
 		pubsub.publish(message("test"));
 		assertMessageNotDelivered("test");
 	}
