@@ -81,6 +81,15 @@ public class SimplePublisherImplTest {
 	}
 	
 	@Test
+	public void should_not_unsubscribe_nonexisting_subscriber() throws Exception {
+		Subscriber subscriber = subscriber();
+		pubsub.subscribe(subscriber);
+		pubsub.unsubscribe(subscriber());
+		pubsub.publish(message("test"));
+		assertMessageDelivered("test");
+	}
+	
+	@Test
 	public void should_unsubscribe_subscriber_twice() throws Exception {
 		Subscriber subscriber = subscriber();
 		pubsub.subscribe(subscriber);
