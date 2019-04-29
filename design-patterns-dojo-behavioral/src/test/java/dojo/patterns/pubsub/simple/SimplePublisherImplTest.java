@@ -14,12 +14,12 @@ import dojo.patterns.pubsub.Subscriber;
 
 public class SimplePublisherImplTest {
 
-	private SimplePublisherImpl pubsub;
+	protected SimplePublisher pubsub;
 	private List<Message> messages;
 	
 	@Before
 	public void init() {
-		pubsub = new SimplePublisherImpl();
+		pubsub = publisher();
 		messages = new ArrayList<>();
 	}
 	
@@ -90,19 +90,23 @@ public class SimplePublisherImplTest {
 		assertMessageNotDelivered("test");
 	}
 	
-	private Subscriber subscriber() {
+	protected SimplePublisher publisher() {
+		return new SimplePublisherImpl();
+	}
+	
+	protected Subscriber subscriber() {
 		return (msg) -> this.messages.add(msg);
 	}
 	
-	private Message message(String text) {
+	protected Message message(String text) {
 		return new Message(text);
 	}
 	
-	private void assertMessageNotDelivered(String ... expectedTexts) {
+	protected void assertMessageNotDelivered(String ... expectedTexts) {
 		assertThat(messages).extracting(msg -> msg.getText()).doesNotContain(expectedTexts);
 	}
 	
-	private void assertMessageDelivered(String ... expectedTexts) {
+	protected void assertMessageDelivered(String ... expectedTexts) {
 		assertThat(messages).extracting(msg -> msg.getText()).containsExactly(expectedTexts);
 	}
 	
