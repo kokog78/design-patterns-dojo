@@ -20,6 +20,14 @@ public class Step implements TestNode {
 		}
 	}
 	
+	public String getNamespace() {
+		return namespace;
+	}
+	
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+	
 	public String getShortName() {
 		return shortName;
 	}
