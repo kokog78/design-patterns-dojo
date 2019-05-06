@@ -3,9 +3,9 @@ package dojo.patterns.gameoflife;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class AbstractTable<C extends Cell> {
+public class Table {
 
-	private final Map<Position, C> liveCellMap = new HashMap<>();
+	private final Map<Position, Cell> liveCellMap = new HashMap<>();
 	
 	public void setCell(int x, int y, boolean live) {
 		Position position = getPosition(x, y);
@@ -22,7 +22,7 @@ public abstract class AbstractTable<C extends Cell> {
 	
 	public boolean isCellLive(int x, int y) {
 		Position position = getPosition(x, y);
-		C cell = liveCellMap.get(position);
+		Cell cell = liveCellMap.get(position);
 		if (cell != null) {
 			return cell.isLive();
 		} else {
@@ -30,11 +30,9 @@ public abstract class AbstractTable<C extends Cell> {
 		}
 	}
 	
-	public Iterable<C> liveCells() {
-		return liveCellMap.values();
+	private Cell createLiveCell(Position position) {
+		return new Cell(position, true);
 	}
-	
-	protected abstract C createLiveCell(Position position);
 	
 	private Position getPosition(int x, int y) {
 		return new Position(x, y);

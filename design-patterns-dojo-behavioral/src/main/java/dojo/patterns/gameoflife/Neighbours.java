@@ -1,16 +1,14 @@
-package dojo.patterns.iterator;
+package dojo.patterns.gameoflife;
+
 
 import java.util.Iterator;
 
-import dojo.patterns.gameoflife.Cell;
-import dojo.patterns.gameoflife.Position;
-
 public class Neighbours implements Iterable<Cell> {
 
-	private final NormalTable table;
+	private final Table table;
 	private final Position position;
 	
-	public Neighbours(NormalTable table, Position position) {
+	public Neighbours(Table table, Position position) {
 		super();
 		this.table = table;
 		this.position = position;

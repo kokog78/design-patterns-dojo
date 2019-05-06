@@ -1,6 +1,6 @@
 package dojo.patterns.visitor;
 
-public interface Visitor {
+public interface TestNodeVisitor {
 
 	// TODO metódusok megírása
 }
