@@ -31,4 +31,8 @@ public class Test implements TestNode {
 		return steps;
 	}
 
+	@Override
+	public List<? extends TestNode> getChildren() {
+		return steps;
+	}
 }

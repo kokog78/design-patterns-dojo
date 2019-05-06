@@ -39,5 +39,10 @@ public class Specification implements TestNode {
 	public List<Test> getTests() {
 		return tests;
 	}
+	
+	@Override
+	public List<? extends TestNode> getChildren() {
+		return tests;
+	}
 
 }

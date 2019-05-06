@@ -48,5 +48,10 @@ public class Step implements TestNode {
 	public List<Step> getSteps() {
 		return steps;
 	}
+	
+	@Override
+	public List<? extends TestNode> getChildren() {
+		return steps;
+	}
 
 }

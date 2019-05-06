@@ -32,5 +32,8 @@ public class TestRun implements TestNode {
 		return specifications;
 	}
 
-	
+	@Override
+	public List<? extends TestNode> getChildren() {
+		return specifications;
+	}
 }
